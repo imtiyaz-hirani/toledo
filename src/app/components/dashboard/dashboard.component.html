@@ -1,0 +1,324 @@
+<!-- Page Banner -->
+<!-- <div
+    class="page-banner-area ptb-100"
+    style="background-image: url(assets/images/shapes/page-banner-bg.jpg);"
+>
+    <div class="container">
+        <div class="page-banner-content text-center">
+            <h1>Dashboard</h1>
+            <ul class="ps-0 mb-0 list-unstyled">
+                <li class="d-inline-block position-relative"><a routerLink="/">Home</a></li>
+                <li class="d-inline-block position-relative">Dashboard</li>
+            </ul>
+        </div>
+    </div>
+</div> -->
+
+<!-- Dashboard -->
+<div class="dashboard-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-12">
+                <div class="dashboard-sidebar">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/dashboard">
+                                <i class="bx bx-home"></i>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/dashboard/enrolled-courses">
+                                <i class="bx bx-book-bookmark"></i>
+                                Enrolled Courses
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/dashboard/wishlist">
+                                <i class="bx bx-bookmark-alt"></i>
+                                Wishlist
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/dashboard/my-profile">
+                                <i class="bx bx-user"></i>
+                                My Profile
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/dashboard/edit-profile">
+                                <i class='bx bx-user-plus'></i>
+                                Edit Profile
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/dashboard/active-courses">
+                                <i class="bx bx-book"></i>
+                                Active Courses
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/dashboard/orders-list">
+                                <i class="bx bxs-shopping-bag"></i>
+                                Orders List
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/dashboard/reviews">
+                                <i class="bx bx-star"></i>
+                                Reviews
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/dashboard/completed-courses">
+                                <i class="bx bxs-book-bookmark"></i>
+                                Completed Courses
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/dashboard/cart">
+                                <i class='bx bx-cart'></i>
+                                Cart
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-12">
+                <ng-container *ngIf="(router.url === '/dashboard'); else elseBlock">
+                    <div class="dashboard-stats">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="stats-box">
+                                    <div class="icon ms-auto me-auto rounded-circle position-relative">
+                                        <i class="bx bx-book-bookmark"></i>
+                                    </div>
+                                    <h3>70</h3>
+                                    <span class="d-block">Total Courses</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="stats-box">
+                                    <div class="icon ms-auto me-auto rounded-circle position-relative">
+                                        <i class='bx bx-book-reader'></i>
+                                    </div>
+                                    <h3>25</h3>
+                                    <span class="d-block">Enrolled Courses</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="stats-box">
+                                    <div class="icon ms-auto me-auto rounded-circle position-relative">
+                                        <i class='bx bx-book'></i>
+                                    </div>
+                                    <h3>05</h3>
+                                    <span class="d-block">Active Courses</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="stats-box">
+                                    <div class="icon ms-auto me-auto rounded-circle position-relative">
+                                        <i class='bx bx-cube'></i>
+                                    </div>
+                                    <h3>10</h3>
+                                    <span class="d-block">Completed Courses</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="stats-box">
+                                    <div class="icon ms-auto me-auto rounded-circle position-relative">
+                                        <i class='bx bx-group'></i>
+                                    </div>
+                                    <h3>200+</h3>
+                                    <span class="d-block">Total Students</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="stats-box">
+                                    <div class="icon ms-auto me-auto rounded-circle position-relative">
+                                        <i class='bx bx-dollar'></i>
+                                    </div>
+                                    <h3>$25K</h3>
+                                    <span class="d-block">Total Earnings</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courses-table">
+                        <div class="table-responsive">
+                            <table class="table align-middle">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Course Name</th>
+                                        <th scope="col">Enrolled</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Rating</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">
+                                            <a routerLink="/course-details">
+                                                Deep Learning a-z Hands on Artificial Neural Networks
+                                            </a>
+                                        </th>
+                                        <td>
+                                            20
+                                        </td>
+                                        <td>
+                                            $19
+                                        </td>
+                                        <td>
+                                            <div class="rating">
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star'></i>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <a routerLink="/course-details">
+                                                The Data Science Courses Complete Data Science
+                                            </a>
+                                        </th>
+                                        <td>
+                                            10
+                                        </td>
+                                        <td>
+                                            $44
+                                        </td>
+                                        <td>
+                                            <div class="rating">
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bx-star'></i>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <a routerLink="/course-details">
+                                                Node.js for Beginners Go From Zero Hero Nede.js
+                                            </a>
+                                        </th>
+                                        <td>
+                                            31
+                                        </td>
+                                        <td>
+                                            $43
+                                        </td>
+                                        <td>
+                                            <div class="rating">
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star-half'></i>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <a routerLink="/course-details">
+                                                Successful Negotiation: Master Your Negotiating
+                                            </a>
+                                        </th>
+                                        <td>
+                                            54
+                                        </td>
+                                        <td>
+                                            $123
+                                        </td>
+                                        <td>
+                                            <div class="rating">
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bx-star'></i>
+                                                <i class='bx bx-star'></i>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <a routerLink="/course-details">
+                                                Java Programming Master Class for Software
+                                            </a>
+                                        </th>
+                                        <td>
+                                            32
+                                        </td>
+                                        <td>
+                                            $65
+                                        </td>
+                                        <td>
+                                            <div class="rating">
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star'></i>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <a routerLink="/course-details">
+                                                Machine Learning A-Z™: Hands-On Python & R
+                                            </a>
+                                        </th>
+                                        <td>
+                                            43
+                                        </td>
+                                        <td>
+                                            $33
+                                        </td>
+                                        <td>
+                                            <div class="rating">
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bx-star'></i>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <a routerLink="/course-details">
+                                                Node.js for Beginners Go From Zero Hero Nede.js
+                                            </a>
+                                        </th>
+                                        <td>
+                                            15
+                                        </td>
+                                        <td>
+                                            $99
+                                        </td>
+                                        <td>
+                                            <div class="rating">
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star'></i>
+                                                <i class='bx bxs-star'></i>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </ng-container>
+                <ng-template #elseBlock>
+                    <router-outlet></router-outlet>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>
