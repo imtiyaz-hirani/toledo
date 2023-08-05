@@ -7,7 +7,7 @@
         <div class="courses-tabs">
             <div class="d-lg-flex align-items-center justify-content-between">
                 <div class="section-title">
-                    <h2 class="mb-0">Our Popular Online Courses</h2>
+                    <h2 class="mb-0">Courses</h2>
                 </div>
                 <ul class="nav nav-tabs d-block border-0">
                     <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab1'}">
@@ -17,22 +17,22 @@
                     </li>
                     <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab2'}">
                         <button type="button" class="nav-link shadow-none border-0 mb-0 rounded-0" (click)="switchTab($event, 'tab2')">
-                            Digital
+                            Online
                         </button>
                     </li>
                     <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab3'}">
                         <button type="button" class="nav-link shadow-none border-0 mb-0 rounded-0" (click)="switchTab($event, 'tab3')">
-                            Marketing
+                            Online + Live Zoom Sessions
                         </button>
                     </li>
                     <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab4'}">
                         <button type="button" class="nav-link shadow-none border-0 mb-0 rounded-0" (click)="switchTab($event, 'tab4')">
-                            Programming
+                            Free Courses
                         </button>
                     </li>
                     <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab5'}">
                         <button type="button" class="nav-link shadow-none border-0 mb-0 rounded-0" (click)="switchTab($event, 'tab5')">
-                            Art & Crafts
+                            Enterprise Project Dev
                         </button>
                     </li>
                 </ul>
@@ -50,7 +50,7 @@
                                         >
                                             <img src="assets/images/courses/course1.jpg" alt="course-image">
                                             <a routerLink="/course-details" class="link-btn"></a>
-                                            <span class="price">$58</span>
+                                            <span class="price">Rs. 3499</span>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6">
@@ -58,7 +58,7 @@
                                             <div class="meta justify-content-between align-items-center d-flex">
                                                 <a routerLink="/instructor-profile" class="user d-flex align-items-center">
                                                     <img src="assets/images/users/user3.jpg" width="40" height="40" class="rounded-circle" alt="user-image">
-                                                    Sydney Phelps
+                                                    Imtiyaz Hirani
                                                 </a>
                                                 <div class="rating">
                                                     <i class='bx bxs-star'></i>
@@ -67,18 +67,20 @@
                                             </div>
                                             <h3>
                                                 <a routerLink="/course-details">
-                                                    Successful Negotiation: Master Your Negotiating
+                                                    Java Programming : Core to Advance
                                                 </a>
                                             </h3>
                                             <ul class="info d-flex align-items-center justify-content-between ps-0 mb-0 list-unstyled">
                                                 <li>
                                                     <i class="flaticon-open-book"></i>
-                                                    18 Lessons
+                                                    5 Sub-Courses
                                                 </li>
+                                                <!--
                                                 <li>
                                                     <i class="flaticon-young-man"></i>
-                                                    27 Students
+                                                    Begineer/Intermediate
                                                 </li>
+                                                -->
                                             </ul>
                                         </div>
                                     </div>
@@ -95,7 +97,7 @@
                                         >
                                             <img src="assets/images/courses/course2.jpg" alt="course-image">
                                             <a routerLink="/course-details" class="link-btn"></a>
-                                            <span class="price">$88</span>
+                                            <span class="price">Rs. 5500</span>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6">
@@ -103,7 +105,7 @@
                                             <div class="meta justify-content-between align-items-center d-flex">
                                                 <a routerLink="/instructor-profile" class="user d-flex align-items-center">
                                                     <img src="assets/images/users/user4.jpg" width="40" height="40" class="rounded-circle" alt="user-image">
-                                                    Sergio Osborn
+                                                    Imtiyaz Hirani
                                                 </a>
                                                 <div class="rating">
                                                     <i class='bx bxs-star'></i>
@@ -112,18 +114,15 @@
                                             </div>
                                             <h3>
                                                 <a routerLink="/course-details">
-                                                    Java Programming Master Class for Software
+                                                    Spring Boot MasterClass : Hibernate/JPA/Microservices
                                                 </a>
                                             </h3>
                                             <ul class="info d-flex align-items-center justify-content-between ps-0 mb-0 list-unstyled">
                                                 <li>
                                                     <i class="flaticon-open-book"></i>
-                                                    28 Lessons
+                                                    6 Sub-Courses
                                                 </li>
-                                                <li>
-                                                    <i class="flaticon-young-man"></i>
-                                                    37 Students
-                                                </li>
+
                                             </ul>
                                         </div>
                                     </div>
@@ -140,7 +139,7 @@
                                         >
                                             <img src="assets/images/courses/course3.jpg" alt="course-image">
                                             <a routerLink="/course-details" class="link-btn"></a>
-                                            <span class="price">$98</span>
+                                            <span class="price">Rs. 4500</span>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6">
@@ -148,27 +147,26 @@
                                             <div class="meta justify-content-between align-items-center d-flex">
                                                 <a routerLink="/instructor-profile" class="user d-flex align-items-center">
                                                     <img src="assets/images/users/user5.jpg" width="40" height="40" class="rounded-circle" alt="user-image">
-                                                    Stewart Burgess
+                                                    Imtiyaz Hirani
                                                 </a>
+                                                <!--
                                                 <div class="rating">
                                                     <i class='bx bxs-star'></i>
                                                     (5.0)
                                                 </div>
+                                                -->
                                             </div>
                                             <h3>
                                                 <a routerLink="/course-details">
-                                                    Machine Learning A-Z™: Hands-On Python & R
+                                                    MERN Stack: Node.js with React&Redux
                                                 </a>
                                             </h3>
                                             <ul class="info d-flex align-items-center justify-content-between ps-0 mb-0 list-unstyled">
                                                 <li>
                                                     <i class="flaticon-open-book"></i>
-                                                    22 Lessons
+                                                    5 Sub-Courses
                                                 </li>
-                                                <li>
-                                                    <i class="flaticon-young-man"></i>
-                                                    67 Students
-                                                </li>
+
                                             </ul>
                                         </div>
                                     </div>
@@ -185,7 +183,7 @@
                                         >
                                             <img src="assets/images/courses/course4.jpg" alt="course-image">
                                             <a routerLink="/course-details" class="link-btn"></a>
-                                            <span class="price">$99</span>
+                                            <span class="price">Rs. 4500</span>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6">
@@ -193,27 +191,26 @@
                                             <div class="meta justify-content-between align-items-center d-flex">
                                                 <a routerLink="/instructor-profile" class="user d-flex align-items-center">
                                                     <img src="assets/images/users/user6.jpg" width="40" height="40" class="rounded-circle" alt="user-image">
-                                                    Cornell Byrd
+                                                    Imtiyaz Hirani
                                                 </a>
+                                               <!--
                                                 <div class="rating">
                                                     <i class='bx bxs-star'></i>
                                                     (5.0)
                                                 </div>
+                                                -->
                                             </div>
                                             <h3>
                                                 <a routerLink="/course-details">
-                                                    Node.js for Beginners Go From Zero Hero Nede.js
+                                                    MEAN Stack: Node.js with Angular Framework
                                                 </a>
                                             </h3>
                                             <ul class="info d-flex align-items-center justify-content-between ps-0 mb-0 list-unstyled">
                                                 <li>
                                                     <i class="flaticon-open-book"></i>
-                                                    33 Lessons
+                                                    5 Sub-Courses
                                                 </li>
-                                                <li>
-                                                    <i class="flaticon-young-man"></i>
-                                                    77 Students
-                                                </li>
+
                                             </ul>
                                         </div>
                                     </div>
