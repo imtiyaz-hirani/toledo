@@ -64,6 +64,9 @@ import { CompletedCoursesComponent } from './components/dashboard/completed-cour
 import { CartComponent } from './components/dashboard/cart/cart.component';
 import { OrdersListComponent } from './components/dashboard/orders-list/orders-list.component';
 import { EditProfileComponent } from './components/dashboard/edit-profile/edit-profile.component';
+import { TrackCourseComponent } from './components/pages/track-course/track-course.component';
+import { SingleCourseDetailsComponent } from './components/pages/single-course-details/single-course-details.component';
+import { SafePipe } from './pipes/SafePipe';
 
 @NgModule({
     declarations: [
@@ -124,7 +127,10 @@ import { EditProfileComponent } from './components/dashboard/edit-profile/edit-p
         CompletedCoursesComponent,
         CartComponent,
         OrdersListComponent,
-        EditProfileComponent
+        EditProfileComponent,
+        TrackCourseComponent,
+        SingleCourseDetailsComponent,
+        SafePipe
     ],
     imports: [
         BrowserModule,

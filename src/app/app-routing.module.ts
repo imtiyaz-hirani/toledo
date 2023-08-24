@@ -34,6 +34,7 @@ import { ReviewsComponent } from './components/dashboard/reviews/reviews.compone
 import { CompletedCoursesComponent } from './components/dashboard/completed-courses/completed-courses.component';
 import { CartComponent } from './components/dashboard/cart/cart.component';
 import { EditProfileComponent } from './components/dashboard/edit-profile/edit-profile.component';
+import { SingleCourseDetailsComponent } from './components/pages/single-course-details/single-course-details.component';
 
 const routes: Routes = [
     {path: '', component: HomeDemoOneComponent},
@@ -47,8 +48,9 @@ const routes: Routes = [
     {path: 'faq', component: FaqPageComponent},
     {path: 'courses-grid', component: CoursesGridPageComponent},
     {path: 'courses-list', component: CoursesListPageComponent},
-    {path: 'course-details', component: CourseDetailsPageComponent},
-    {path: 'events', component: EventsPageComponent},
+    {path: 'course-details/:trackId', component: CourseDetailsPageComponent},
+    {path: 'single-course-details/:courseId/:trackId', component: SingleCourseDetailsComponent},
+     {path: 'events', component: EventsPageComponent},
     {path: 'event-details', component: EventDetailsPageComponent},
     {path: 'testimonials', component: TestimonialsPageComponent},
     {path: 'privacy-policy', component: PrivacyPolicyPageComponent},

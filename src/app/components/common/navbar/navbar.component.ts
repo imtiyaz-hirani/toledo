@@ -1,12 +1,16 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Track from 'src/app/models/Track';
+ import { CourseService } from 'src/app/services/course.service';
 
 @Component({
     selector: 'app-navbar',
     templateUrl: './navbar.component.html',
     styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
+
+    tracks: Track[]=[]
 
     // Navbar Sticky
     isSticky: boolean = false;
@@ -21,7 +25,7 @@ export class NavbarComponent {
     }
 
     constructor(
-        public router: Router
+        public router: Router, private courseService: CourseService
     ) { }
 
     classApplied = false;
@@ -39,4 +43,9 @@ export class NavbarComponent {
         this.sidebarClassApplied = !this.sidebarClassApplied;
     }
 
+    ngOnInit(): void {
+        this.courseService.getAllTracks().subscribe(data=>{
+            this.tracks = data
+        })
+    }
 }

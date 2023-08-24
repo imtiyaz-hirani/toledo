@@ -26,21 +26,12 @@
                             Learning Tracks
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="nav-item">
-                                <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                                    Java Programming with Collections and JDBC
+                            <li class="nav-item" *ngFor="let track of tracks">
+                                <a routerLink="/course-details/{{track._id}}" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    {{track.name}}
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a routerLink="/index-2" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                                    SQL Programming with PL/SQL
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a routerLink="/index-3" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                                    Java/J2EE with Spring 5 and HIbernate
-                                </a>
-                            </li>
+
                             <li class="nav-item">
                                 <a routerLink="/index-3" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                                     Professional Spring Boot with Microservices
@@ -58,7 +49,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a href="javascript:void(0)" class="dropdown-toggle nav-link">
                             Free Courses
                         </a>
@@ -94,8 +85,8 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
-                    <li class="nav-item">
+                    </li> -->
+                    <!-- <li class="nav-item">
                         <a href="javascript:void(0)" class="dropdown-toggle nav-link">
                              Weekend Workshops
                         </a>
@@ -121,8 +112,8 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
-                    <li class="nav-item">
+                    </li> -->
+                    <!-- <li class="nav-item">
                         <a href="javascript:void(0)" class="dropdown-toggle nav-link">
                             Pages
                         </a>
@@ -197,7 +188,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                     <!--
                     <li class="nav-item">
                         <a href="javascript:void(0)" class="dropdown-toggle nav-link">
@@ -222,6 +213,11 @@
                         </ul>
                     </li>
                     -->
+                    <li class="nav-item">
+                        <a routerLink="/courses-grid" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                            All Courses
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a routerLink="/contact" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                             Contact Us

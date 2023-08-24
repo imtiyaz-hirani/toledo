@@ -24,11 +24,13 @@
                     <form>
                         <div class="form-group">
                             <label>Username or email</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control"
+                             >
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control">
+                            <input type="password" class="form-control"
+                             >
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="remember-me">
@@ -36,7 +38,7 @@
                                 Remember me
                             </label>
                         </div>
-                        <button type="submit" class="default-btn">Login Now</button>
+                        <button type="submit" class="default-btn" (click)="login()">Login Now</button>
                         <a routerLink="/forgot-password" class="forgot-password">Forgot your password?</a>
                     </form>
                 </div>

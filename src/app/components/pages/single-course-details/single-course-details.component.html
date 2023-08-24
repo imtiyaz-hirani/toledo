@@ -13,16 +13,16 @@
                     </div>
                 </div>
                 <div class="list-item d-inline-block position-relative">
-                    {{track.language}}
+                    &nbsp;&nbsp;&nbsp; Language: {{course.language}}
                 </div>
-                <div class="list-item d-inline-block position-relative">
-                    <i class='bx bxs-star'></i> 5.0 ({{track.reviews.length}}) Reviews
-                </div>
+
             </div>
-            <h1> {{track.name}}</h1>
+            <h1> {{course.name}}</h1>
             <ul class="ps-0 mb-0 list-unstyled">
                 <li class="d-inline-block position-relative"><a routerLink="/">Home</a></li>
-                <li class="d-inline-block position-relative">Track Details</li>
+                <li class="d-inline-block position-relative"><a routerLink="/course-details/{{trackId}}">Track Details</a></li>
+                <li class="d-inline-block position-relative"> Course Details </li>
+
             </ul>
         </div>
     </div>
@@ -42,7 +42,7 @@
                         </li>
                         <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab2'}">
                             <button type="button" class="nav-link position-relative shadow-none border-0 mb-0 rounded-0" (click)="switchTab($event, 'tab2')">
-                                Track Content
+                                Course Content
                             </button>
                         </li>
                         <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab3'}">
@@ -50,23 +50,21 @@
                                 Instructor
                             </button>
                         </li>
-                        <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab4'}">
-                            <button type="button" class="nav-link position-relative shadow-none border-0 mb-0 rounded-0" (click)="switchTab($event, 'tab4')">
-                                Reviews
-                            </button>
-                        </li>
+
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane fade" id="tab1" *ngIf="currentTab === 'tab1'">
                             <div class="overview-details-content">
                                 <h4>Description</h4>
-                                <div [innerHTML]="track.description"></div>
+                                <div [innerHTML]="course.shortDescription"></div>
+                                <div [innerHTML]="course.description"></div>
+
                                  <h4>What You'll Learn</h4>
                                 <ul class="features-list ps-0 list-unstyled d-flex flex-wrap">
-                                    <li *ngFor="let e of track.points">
+                                    <li *ngFor="let m of course.modules">
                                         <span>
                                             <i class="flaticon-tick"></i>
-                                            {{e.p}}
+                                            {{m.name}}
                                         </span>
                                     </li>
 
@@ -74,7 +72,7 @@
                             </div>
 
 
-                            <div class="course-details-feedback">
+                            <!-- <div class="course-details-feedback">
                                 <h4>Few Track Reviews</h4>
 
                                 <div class="feedback-list">
@@ -93,7 +91,7 @@
 
 
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- <div class="course-details-write-review">
                                 <h4>Write a Review</h4>
                                 <p>What is it like to Course?</p>
@@ -117,17 +115,17 @@
                         </div>
                         <div class="tab-pane fade" id="tab2" *ngIf="currentTab === 'tab2'">
                             <div class="course-details-content mb-0">
-                                <h4>Courses from {{track.name}}</h4>
+                                <h4>Modules from {{course.name}}</h4>
                                 <div class="accordion">
-                                    <div class="accordion-section" *ngFor="let course of courses; let i = index">
+                                    <div class="accordion-section" *ngFor="let module of modules; let i = index" >
                                         <div class="accordion-header" (click)="toggleSection(i)" [ngClass]="{ 'open': isSectionOpen(i) }">
-                                            {{course.name}}
-                                            <span> <a routerLink="/single-course-details/{{course._id}}/{{track._id}}" target="_blank"> View Details </a></span>
+                                            {{module.name}}
+                                            <span> {{module.contentLength | number : '1.2-2'}} mins </span>
                                         </div>
                                         <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(i) }">
                                             <ul class="ps-0 mb-0 list-unstyled">
-                                                <li class="d-sm-flex align-items-center justify-content-between" *ngFor="let m of course.modules">
-                                                    {{m.name}}
+                                                <li class="d-sm-flex align-items-center justify-content-between" *ngFor="let v of module.videos">
+                                                    {{v.title}}
                                                     <span><i class='bx bx-lock-alt'></i> </span>
                                                 </li>
 
@@ -214,69 +212,23 @@
 
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="tab4" *ngIf="currentTab === 'tab4'">
-                            <div class="course-details-feedback">
 
-
-                                <div class="course-details-feedback">
-                                    <h4>Track Reviews</h4>
-
-                                    <div class="feedback-list">
-                                        <div class="feedback-item" *ngFor="let r of track.reviews">
-                                            <div class="user d-flex align-items-center">
-                                                <img src="assets/images/users/user2.jpg" class="rounded-circle" width="55" alt="user">
-                                                <div>
-                                                    <h6> {{r.name}}  </h6>
-                                                    <span class="sub-title">
-                                                        {{r.college}}
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <p>{{r.reviewMsg}}</p>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <div class="course-details-write-review">
-                                <h4>Write a Review</h4>
-                                <p>What is it like to Course?</p>
-                                <form>
-                                    <div class="rating">
-                                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
-                                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
-                                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
-                                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
-                                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="College/Company Name">
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea class="form-control" cols="30" rows="5" placeholder="Message..."></textarea>
-                                    </div>
-                                    <button type="submit" class="default-btn">Submit Review</button>
-                                </form>
-                            </div> -->
-                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-12">
                 <div class="course-details-info">
                     <div class="image position-relative">
-                        <img src="assets/images/courses/course5.jpg" alt="course-image">
-                        <button type="button" class="video-btn p-0 border-0 d-inline-block rounded-circle" (click)="openPopup()">
-                            <i class='bx bx-play' ></i>
-                        </button>
-                    </div>
+
+                            <iframe [src]="url | safe" width="100%" frameborder="0" allow="autoplay; encrypted-media; fullscreen"  ></iframe>
+
+                     </div>
                     <div class="content">
                         <h3>Course Includes</h3>
                         <ul class="info ps-0 mb-0 list-unstyled">
                             <li class="d-flex align-items-center justify-content-between">
                                 <span>Price:</span>
-                                 INR. {{track.fee}}
+                                 INR. {{course.fee}}
                             </li>
                             <li class="d-flex align-items-center justify-content-between">
                                 <span>Instructor:</span>
@@ -284,13 +236,13 @@
                             </li>
 
                             <li class="d-flex align-items-center justify-content-between">
-                                <span>Sub Courses:</span>
-                                 {{track.numOfCourses}}
+                                <span>Modules:</span>
+                                 {{course.modules.length}}
                             </li>
 
                             <li class="d-flex align-items-center justify-content-between">
                                 <span>Language:</span>
-                                {{track.language}}
+                                {{course.language}}
                             </li>
                             <li class="d-flex align-items-center justify-content-between">
                                 <span>Certificate:</span>
@@ -303,7 +255,7 @@
                         </ul>
                         <div class="btn-box">
                             <a href="javascript:void(0);" class="default-btn d-block w-100 text-center">Start Now</a>
-                            <a href="javascript:void(0);" class="default-btn d-block w-100 text-center two">View Track Courses</a>
+                            <a href="javascript:void(0);" class="default-btn d-block w-100 text-center two" routerLink="/course-details/{{trackId}}">View Other Track Courses</a>
                         </div>
                         <span class="d-block fw-medium">Share On:</span>
                         <ul class="social-links ps-0 mb-0 list-unstyled">
@@ -348,3 +300,4 @@
         </button>
     </div>
 </div>
+
